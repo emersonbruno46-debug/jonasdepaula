@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { 
   Palette, 
@@ -28,7 +29,7 @@ const fadeUp = {
 };
 
 const PremiumLanding = () => {
-  const [isMenuOpen, setIsMenuOpen] = window.useState(false);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
     <div className="min-h-screen premium-dark bg-[#0a0a0a] text-white selection:bg-yellow-500/30 overflow-hidden relative">
