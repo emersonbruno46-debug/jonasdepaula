@@ -32,7 +32,7 @@ const PremiumLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const handleContact = () => {
-    window.open("https://wa.me/5538999105529", "_blank");
+    window.open("https://wa.me/5538999105529?text=Olá,%20quero%20transformar%20minha%20marca%20com%20vocês!", "_blank");
   };
 
   return (
