@@ -31,6 +31,10 @@ const fadeUp = {
 const PremiumLanding = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
+  const handleContact = () => {
+    window.open("https://wa.me/5538999105529", "_blank");
+  };
+
   return (
     <div className="min-h-screen premium-dark bg-[#0a0a0a] text-white selection:bg-yellow-500/30 overflow-hidden relative">
       {/* Background Mesh Image */}
@@ -68,7 +72,7 @@ const PremiumLanding = () => {
               </a>
             ))}
           </div>
-          <PremiumButton className="hidden md:flex">Falar com Consultor</PremiumButton>
+          <PremiumButton className="hidden md:flex" onClick={handleContact}>Falar com Consultor</PremiumButton>
 
           {/* Mobile Menu Button */}
           <button 
@@ -99,7 +103,7 @@ const PremiumLanding = () => {
                 {item}
               </a>
             ))}
-            <PremiumButton className="w-full justify-center py-4">Falar com Consultor</PremiumButton>
+            <PremiumButton className="w-full justify-center py-4" onClick={handleContact}>Falar com Consultor</PremiumButton>
           </div>
         </motion.div>
       </nav>
@@ -132,7 +136,7 @@ const PremiumLanding = () => {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-6">
-                <PremiumButton className="px-10 py-5 text-lg group">
+                <PremiumButton className="px-10 py-5 text-lg group" onClick={handleContact}>
                   Iniciar meu Projeto 
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </PremiumButton>
@@ -325,7 +329,7 @@ const PremiumLanding = () => {
               Seu próximo grande passo começa com um design que faz a diferença. Vamos conversar?
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center">
-              <PremiumButton className="px-12 py-6 text-xl">
+              <PremiumButton className="px-12 py-6 text-xl" onClick={handleContact}>
                 Agendar Consultoria Grátis
               </PremiumButton>
             </div>
@@ -407,7 +411,7 @@ const PremiumLanding = () => {
                   </div>
                 ))}
               </div>
-              <PremiumButton variant="outline" className="w-full py-4 text-sm font-black uppercase tracking-widest">Quero Começar Agora</PremiumButton>
+              <PremiumButton variant="outline" className="w-full py-4 text-sm font-black uppercase tracking-widest" onClick={handleContact}>Quero Começar Agora</PremiumButton>
             </PremiumCard>
 
             {/* Plan 2 - Featured */}
@@ -429,7 +433,7 @@ const PremiumLanding = () => {
                   </div>
                 ))}
               </div>
-              <PremiumButton className="w-full py-4 bg-black text-[#FFDE21] hover:bg-zinc-900 border-transparent text-sm font-black uppercase tracking-widest">Quero Começar Agora</PremiumButton>
+              <PremiumButton className="w-full py-4 bg-black text-[#FFDE21] hover:bg-zinc-900 border-transparent text-sm font-black uppercase tracking-widest" onClick={handleContact}>Quero Começar Agora</PremiumButton>
             </PremiumCard>
 
             {/* Plan 3 */}
@@ -448,7 +452,7 @@ const PremiumLanding = () => {
                   </div>
                 ))}
               </div>
-              <PremiumButton variant="outline" className="w-full py-4 text-sm font-black uppercase tracking-widest">Quero Começar Agora</PremiumButton>
+              <PremiumButton variant="outline" className="w-full py-4 text-sm font-black uppercase tracking-widest" onClick={handleContact}>Quero Começar Agora</PremiumButton>
             </PremiumCard>
           </div>
         </div>
