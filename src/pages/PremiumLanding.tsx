@@ -10,7 +10,9 @@ import {
   Instagram,
   Linkedin,
   Twitter,
-  MousePointer2
+  MousePointer2,
+  Menu,
+  X
 } from "lucide-react";
 import { PremiumButton } from "@/components/premium/PremiumButton";
 import { PremiumCard } from "@/components/premium/PremiumCard";
@@ -26,6 +28,8 @@ const fadeUp = {
 };
 
 const PremiumLanding = () => {
+  const [isMenuOpen, setIsMenuOpen] = window.useState(false);
+
   return (
     <div className="min-h-screen premium-dark bg-[#0a0a0a] text-white selection:bg-yellow-500/30 overflow-hidden relative">
       {/* Background Mesh Image */}
@@ -54,8 +58,10 @@ const PremiumLanding = () => {
 
       {/* Navbar */}
       <nav className="fixed top-0 left-0 right-0 z-[60] border-b border-white/5 bg-black/40 backdrop-blur-2xl">
-        <div className="container mx-auto px-6 h-24 flex items-center justify-between">
+        <div className="container mx-auto px-6 h-20 md:h-24 flex items-center justify-between">
           <LogoPremium />
+          
+          {/* Desktop Links */}
           <div className="hidden md:flex items-center gap-10">
             {["Serviços", "Portfólio", "Processo", "Depoimentos"].map((item) => (
               <a 
@@ -68,7 +74,39 @@ const PremiumLanding = () => {
             ))}
           </div>
           <PremiumButton className="hidden md:flex">Falar com Consultor</PremiumButton>
+
+          {/* Mobile Menu Button */}
+          <button 
+            className="md:hidden w-10 h-10 flex items-center justify-center text-white"
+            onClick={() => setIsMenuOpen(!isMenuOpen)}
+          >
+            {isMenuOpen ? <X className="w-8 h-8" /> : <Menu className="w-8 h-8" />}
+          </button>
         </div>
+
+        {/* Mobile Menu Drawer */}
+        <motion.div 
+          initial={{ opacity: 0, height: 0 }}
+          animate={{ 
+            opacity: isMenuOpen ? 1 : 0,
+            height: isMenuOpen ? "auto" : 0
+          }}
+          className="md:hidden bg-black/95 border-b border-white/10 overflow-hidden"
+        >
+          <div className="flex flex-col p-8 gap-6">
+            {["Serviços", "Portfólio", "Processo", "Depoimentos"].map((item) => (
+              <a 
+                key={item} 
+                href={`#${item.toLowerCase()}`} 
+                className="text-lg font-black uppercase tracking-widest text-white/70 hover:text-[#FFDE21]"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                {item}
+              </a>
+            ))}
+            <PremiumButton className="w-full justify-center py-4">Falar com Consultor</PremiumButton>
+          </div>
+        </motion.div>
       </nav>
 
       {/* Hero Section */}
@@ -89,7 +127,7 @@ const PremiumLanding = () => {
                 <span className="text-[10px] font-black uppercase tracking-[0.2em] text-[#FFDE21]">Agência Boutique de Design</span>
               </div>
               
-              <h1 className="text-6xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter">
+              <h1 className="text-4xl sm:text-6xl md:text-8xl font-black mb-8 leading-[0.9] tracking-tighter">
                 Transformamos sua <br /> 
                 <span className="text-[#FFDE21] drop-shadow-[0_0_30px_rgba(255,222,33,0.3)]">Presença Digital</span>
               </h1>
@@ -179,8 +217,8 @@ const PremiumLanding = () => {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
             <div className="max-w-2xl">
-              <h2 className="text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Nossas <br /> <span className="text-[#FFDE21]">Soluções</span></h2>
-              <p className="text-white/60 text-xl font-medium">Especialistas em transformar sua presença digital através de um ecossistema de design completo.</p>
+              <h2 className="text-3xl sm:text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Nossas <br /> <span className="text-[#FFDE21]">Soluções</span></h2>
+              <p className="text-white/60 text-lg md:text-xl font-medium">Especialistas em transformar sua presença digital através de um ecossistema de design completo.</p>
             </div>
             <div className="h-px flex-1 bg-white/10 mx-10 hidden lg:block mb-8" />
           </div>
@@ -224,8 +262,8 @@ const PremiumLanding = () => {
       <section id="portfólio" className="py-32 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Impacto em <span className="text-[#FFDE21]">Números</span></h2>
-            <p className="text-white/60 text-xl max-w-2xl mx-auto font-medium">Projetos que elevaram marcas ao próximo nível de autoridade e reconhecimento.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Impacto em <span className="text-[#FFDE21]">Números</span></h2>
+            <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-medium">Projetos que elevaram marcas ao próximo nível de autoridade e reconhecimento.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -304,8 +342,8 @@ const PremiumLanding = () => {
       <section id="depoimentos" className="py-32 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Depoimentos de <span className="text-[#FFDE21]">Clientes</span></h2>
-            <p className="text-white/60 text-xl max-w-3xl mx-auto font-medium">Não acredite apenas no que dizemos. Veja o que nossos clientes têm a dizer sobre trabalhar conosco.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Depoimentos de <span className="text-[#FFDE21]">Clientes</span></h2>
+            <p className="text-white/60 text-lg md:text-xl max-w-3xl mx-auto font-medium">Não acredite apenas no que dizemos. Veja o que nossos clientes têm a dizer sobre trabalhar conosco.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8">
@@ -353,8 +391,8 @@ const PremiumLanding = () => {
       <section id="planos" className="py-32 relative z-10">
         <div className="container mx-auto px-6">
           <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Escolha seu <span className="text-[#FFDE21]">Plano</span></h2>
-            <p className="text-white/60 text-xl max-w-2xl mx-auto font-medium">Escolha o plano perfeito para as necessidades do seu negócio. Todos os planos incluem nossa abordagem criativa exclusiva.</p>
+            <h2 className="text-3xl sm:text-4xl md:text-7xl font-black mb-6 text-white uppercase tracking-tighter">Escolha seu <span className="text-[#FFDE21]">Plano</span></h2>
+            <p className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto font-medium">Escolha o plano perfeito para as necessidades do seu negócio. Todos os planos incluem nossa abordagem criativa exclusiva.</p>
           </div>
 
           <div className="grid md:grid-cols-3 gap-8 items-start">
