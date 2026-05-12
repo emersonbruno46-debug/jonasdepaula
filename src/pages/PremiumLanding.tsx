@@ -158,61 +158,56 @@ const PremiumLanding = () => {
               </div>
             </motion.div>
 
-            {/* Visual Content - Layered Overlap Effect */}
+            {/* Visual Content - Larger Image */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9 }}
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ duration: 1.2, ease: [0.22, 1, 0.36, 1] }}
-              className="relative group"
+              className="relative lg:scale-110 xl:scale-125 origin-center lg:translate-x-10"
             >
-              {/* Background 'Frame' */}
-              <div className="absolute inset-0 border border-[#FFDE21]/20 rounded-[3rem] translate-x-4 translate-y-4 md:translate-x-8 md:translate-y-8 z-0 transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-2" />
-              
-              {/* Main Image Container */}
-              <div className="relative z-10 rounded-[3rem] overflow-hidden border border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.5)] aspect-[4/5] sm:aspect-square lg:aspect-[4/5] bg-zinc-900">
+              <div className="relative z-10 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
                 <img 
                   src="/hero-image.png" 
                   alt="Ideal Solutions Team" 
-                  className="w-full h-full object-cover object-top scale-105 transition-transform duration-700 group-hover:scale-110"
+                  className="w-full h-auto"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent opacity-60" />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
               
-              {/* Floating Elements - Adjusted for better overlap feel */}
+              {/* Floating Elements */}
               <motion.div 
-                animate={{ y: [0, -15, 0] }}
+                animate={{ y: [0, -20, 0] }}
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                className="absolute -top-6 -right-6 md:-top-10 md:-right-10 z-20 glass-premium p-4 md:p-6 rounded-3xl border-white/10"
+                className="absolute -top-10 -right-10 z-20 glass-premium p-6 rounded-3xl border-white/10 hidden md:block"
               >
-                <div className="flex items-center gap-3 md:gap-4">
-                   <div className="w-10 h-10 md:w-12 md:h-12 bg-[#FFDE21] rounded-2xl flex items-center justify-center">
-                      <Zap className="text-black w-5 h-5 md:w-6 md:h-6 fill-current" />
+                <div className="flex items-center gap-4">
+                   <div className="w-12 h-12 bg-[#FFDE21] rounded-2xl flex items-center justify-center">
+                      <Zap className="text-black w-6 h-6 fill-current" />
                    </div>
                    <div>
-                      <p className="text-[8px] md:text-xs text-white/40 uppercase font-black tracking-widest leading-none mb-1">Performance</p>
-                      <p className="text-lg md:text-xl font-black text-white">100%</p>
+                      <p className="text-xs text-white/40 uppercase font-black tracking-widest leading-none mb-1">Performance</p>
+                      <p className="text-xl font-black text-white">100%</p>
                    </div>
                 </div>
               </motion.div>
 
               <motion.div 
-                animate={{ y: [0, 15, 0] }}
+                animate={{ y: [0, 20, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                className="absolute -bottom-6 -left-6 md:-bottom-10 md:-left-10 z-20 glass-premium p-4 md:p-6 rounded-3xl border-white/10"
+                className="absolute -bottom-10 -left-10 z-20 glass-premium p-6 rounded-3xl border-white/10 hidden md:block"
               >
-                <div className="flex items-center gap-3 md:gap-4">
-                   <div className="w-10 h-10 md:w-12 md:h-12 bg-white rounded-2xl flex items-center justify-center">
-                      <Star className="text-black w-5 h-5 md:w-6 md:h-6 fill-current" />
+                <div className="flex items-center gap-4">
+                   <div className="w-12 h-12 bg-white rounded-2xl flex items-center justify-center">
+                      <Star className="text-black w-6 h-6 fill-current" />
                    </div>
                    <div>
-                      <p className="text-[8px] md:text-xs text-white/40 uppercase font-black tracking-widest leading-none mb-1">Qualidade</p>
-                      <p className="text-lg md:text-xl font-black text-white">Premium</p>
+                      <p className="text-xs text-white/40 uppercase font-black tracking-widest leading-none mb-1">Qualidade</p>
+                      <p className="text-xl font-black text-white">Premium</p>
                    </div>
                 </div>
               </motion.div>
 
-              {/* Enhanced Glow */}
-              <div className="absolute inset-0 bg-yellow-500/10 blur-[120px] -z-10 rounded-full scale-110" />
+              <div className="absolute inset-0 bg-yellow-500/20 blur-[120px] -z-10 rounded-full scale-75" />
             </motion.div>
           </div>
         </div>
