@@ -34,22 +34,16 @@ const PremiumLanding = () => {
   return (
     <div className="min-h-screen premium-dark bg-[#0a0a0a] text-white selection:bg-yellow-500/30 overflow-hidden relative">
       {/* Background Mesh Image */}
-      <div className="fixed inset-0 z-0 opacity-40 mix-blend-soft-light scale-110">
+      <div className="fixed inset-0 z-0 opacity-100 scale-100">
         <img 
-          src="/premium-bg.png" 
+          src="/premium-bg-new.png" 
           alt="Premium Background" 
           className="w-full h-full object-cover"
         />
       </div>
 
-      {/* Cinematic Flares Layer */}
-      <div className="fixed inset-0 z-[1] opacity-60 mix-blend-screen pointer-events-none">
-        <img 
-          src="/flares-bg.png" 
-          alt="Cinematic Flares" 
-          className="w-full h-full object-cover scale-125"
-        />
-      </div>
+      {/* Cinematic Background Layer */}
+
 
       {/* Background Noise & Lighting */}
       <div className="fixed inset-0 noise-bg z-[2] pointer-events-none" />
@@ -168,7 +162,7 @@ const PremiumLanding = () => {
               <div className="relative z-10 rounded-[3rem] overflow-hidden border border-white/10 shadow-2xl">
                 <img 
                   src="/hero-image.png" 
-                  alt="Ideal Solutions Team" 
+                  alt="Equipe Ideal Solutions" 
                   className="w-full h-auto"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />

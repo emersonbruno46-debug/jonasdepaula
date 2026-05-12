@@ -28,6 +28,7 @@ export default {
 					gold: '#D4AF37',
 					black: '#0a0a0a',
 					gray: '#1a1a1a',
+					yellow: '#FFDE21',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',

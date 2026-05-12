@@ -15,7 +15,7 @@ export const PremiumCard = ({ children, className = "", delay = 0 }: PremiumCard
       transition={{ duration: 0.8, delay, ease: [0.22, 1, 0.36, 1] }}
       className={`glass-premium p-8 rounded-[2rem] relative group overflow-hidden ${className}`}
     >
-      <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      <div className="absolute inset-0 bg-gradient-to-br from-yellow-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
       <div className="relative z-10">
         {children}
       </div>

@@ -3,6 +3,53 @@
 @tailwind utilities;
 
 @layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+    --primary: 142 67% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 210 40% 96%;
+    --secondary-foreground: 222 47% 11%;
+    --muted: 210 40% 96%;
+    --muted-foreground: 215 16% 47%;
+    --accent: 142 67% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 32% 91%;
+    --input: 214 32% 91%;
+    --ring: 142 67% 50%;
+    --radius: 1rem;
+  }
+
+  .dark {
+    --background: 222 47% 6%;
+    --foreground: 210 40% 98%;
+    --card: 222 47% 6%;
+    --card-foreground: 210 40% 98%;
+    --popover: 222 47% 6%;
+    --popover-foreground: 210 40% 98%;
+    --primary: 142 67% 50%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 217 32% 17%;
+    --secondary-foreground: 210 40% 98%;
+    --muted: 217 32% 17%;
+    --muted-foreground: 215 20% 65%;
+    --accent: 142 67% 45%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 62% 40%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 217 32% 17%;
+    --input: 217 32% 17%;
+    --ring: 142 67% 50%;
+  }
+}
+
+@layer base {
   body {
     @apply bg-[#0a0a0a] text-white overflow-x-hidden w-full;
     -webkit-font-smoothing: antialiased;
@@ -12,6 +59,27 @@
 
 @layer components {
   .premium-dark {
-    @apply bg-[#0a0a0a] text-white;
+    --bg-main: #0a0a0a;
+    --bg-card: rgba(15, 15, 15, 0.4);
+    --accent-glow: #FFDE21;
+    --accent-secondary: #ffffff;
+    --text-main: #ffffff;
+    --text-muted: #d1d5db;
+  }
+
+  .glass-premium {
+    @apply bg-[var(--bg-card)] backdrop-blur-2xl border border-white/10 shadow-2xl;
+    background-image: radial-gradient(circle at top left, rgba(255,255,255,0.05), transparent);
+  }
+
+  .text-premium-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-br from-white via-white to-white/40;
+  }
+
+  .noise-bg {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.05;
+    mix-blend-mode: overlay;
+    pointer-events: none;
   }
 }
