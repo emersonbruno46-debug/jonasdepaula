@@ -238,7 +238,7 @@ function About() {
           <div className="flex-shrink-0">
             <div className="relative">
               <div className="absolute -inset-4 rounded-[28px]" style={{ background: "linear-gradient(135deg, rgba(49,184,210,0.08), rgba(49,184,210,0.02))" }} />
-              <img src="/jonas-portrait.png" alt="Jonas de Paula" className="relative w-[260px] md:w-[320px] object-contain rounded-[24px]" />
+              <img src="/jonas-portrait-certo-2.png" alt="Jonas de Paula" className="relative w-[260px] md:w-[320px] object-contain rounded-[24px]" />
             </div>
           </div>
         </Reveal>
