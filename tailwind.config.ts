@@ -24,11 +24,11 @@ export default {
 				ring: 'hsl(var(--ring))',
 				background: 'hsl(var(--background))',
 				foreground: 'hsl(var(--foreground))',
-				premium: {
-					gold: '#D4AF37',
-					black: '#0a0a0a',
-					gray: '#1a1a1a',
-					yellow: '#FFDE21',
+				teal: {
+					DEFAULT: '#00A89E',
+					dark: '#008F87',
+					light: '#E0F7F5',
+					lighter: '#F0FBF9',
 				},
 				primary: {
 					DEFAULT: 'hsl(var(--primary))',
