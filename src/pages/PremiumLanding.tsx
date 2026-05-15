@@ -321,18 +321,7 @@ function WhatsAppFloat() {
 
 export default function PremiumLanding() {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-[#FAFBFC]">
-      {/* Fixed Background Image with reduced opacity */}
-      <div 
-        className="fixed inset-0 w-full h-full z-0 pointer-events-none" 
-        style={{ 
-          backgroundImage: "url('/back.png')", 
-          backgroundSize: "cover", 
-          backgroundPosition: "center",
-          opacity: 0.6 
-        }} 
-      />
-      {/* Content wrapper to ensure it stays above background */}
+    <div className="min-h-screen relative overflow-hidden bg-[#FAFBFC] page-bg">
       <div className="relative z-10">
       <Navbar />
       <Hero />
