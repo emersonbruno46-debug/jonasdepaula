@@ -25,7 +25,7 @@ function Navbar() {
         <a href="#top"><img src="/logo-jonas.svg" alt="Jonas de Paula" className="h-20 md:h-24 w-auto" /></a>
         <div className="hidden md:flex items-center gap-8">
           {links.map(l => <a key={l.h} href={l.h} className="text-[13px] font-medium tracking-wide uppercase" style={{ color: "#6B7280", transition: "color 0.3s" }} onMouseEnter={e => (e.currentTarget.style.color = "#31B8D2")} onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}>{l.l}</a>)}
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand !py-3 !px-7 !text-[13px]"><Phone className="w-4 h-4" />Agendar</a>
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand btn-glow !py-3 !px-7 !text-[13px]"><Phone className="w-4 h-4" />Agendar</a>
         </div>
         <button className="md:hidden p-2" onClick={() => setOpen(!open)}>{open ? <X size={24} /> : <Menu size={24} />}</button>
       </div>
@@ -116,7 +116,7 @@ function Benefits() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {benefits.map((b, i) => (
             <Reveal key={b.t} delay={`delay-${i + 1}` as any}>
-              <div className="card-service h-full">
+              <div className="glass-card h-full">
                 <div className="w-14 h-14 rounded-2xl flex items-center justify-center mb-5" style={{ background: "linear-gradient(135deg, #31B8D2, #7DD3E8)" }}>
                   <b.icon className="w-6 h-6 text-white" />
                 </div>
@@ -148,7 +148,7 @@ function Treatment() {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
           {steps.map((s, i) => (
             <Reveal key={s.n} delay={`delay-${i + 1}` as any}>
-              <div className="h-full rounded-[20px] p-7 transition-all duration-400 hover:-translate-y-2 hover:shadow-xl" style={{ background: "linear-gradient(135deg, #31B8D2 0%, #5ECFE0 100%)" }}>
+              <div className="h-full rounded-[20px] p-7 transition-all duration-400 hover:-translate-y-2 hover:shadow-xl btn-glow" style={{ background: "linear-gradient(135deg, #31B8D2 0%, #5ECFE0 100%)" }}>
                 <span className="text-3xl font-extrabold block mb-3 text-white/20" style={{ fontFamily: "'Sora', sans-serif" }}>{s.n}</span>
                 <s.icon className="w-7 h-7 mb-4 text-white" />
                 <h3 className="text-base font-bold mb-2 text-white" style={{ fontFamily: "'Sora', sans-serif" }}>{s.t}</h3>
@@ -181,7 +181,7 @@ function About() {
             <p className="text-base leading-relaxed mb-4" style={{ color: "#6B7280" }}>Ajudo pessoas a recuperar o movimento, a confiança e a qualidade de vida. Acredito que dor crônica não precisa ser companhia permanente — ela tem causa, e tem solução.</p>
             <p className="text-base leading-relaxed mb-6" style={{ color: "#6B7280" }}>Meu trabalho é unir avaliação criteriosa, técnicas modernas de fisioterapia e um acompanhamento próximo, para que você volte a fazer o que ama, sem limitações.</p>
             <span className="block text-xs font-semibold tracking-wider mb-6" style={{ color: "#9CA3AF" }}>CREFITO-4/439517-F</span>
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand !text-sm"><Phone className="w-4 h-4" />Falar com Jonas</a>
+            <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand btn-glow !text-sm"><Phone className="w-4 h-4" />Falar com Jonas</a>
           </div>
         </Reveal>
       </div>
@@ -227,7 +227,7 @@ function Modalities() {
         <div className="grid md:grid-cols-2 gap-6">
           {mods.map((m, i) => (
             <Reveal key={m.t} delay={i === 0 ? "delay-2" : "delay-3"}>
-              <div className="card-service h-full !p-8">
+              <div className="glass-card h-full !p-8">
                 <div className="flex items-center gap-3 mb-5">
                   <div className="w-11 h-11 rounded-xl flex items-center justify-center" style={{ background: "#E8F7FA" }}>
                     <m.icon className="w-5 h-5" style={{ color: "#31B8D2" }} />
@@ -265,7 +265,7 @@ function FAQ() {
         <div className="space-y-3">
           {faqs.map((f, i) => (
             <Reveal key={i} delay={`delay-${i + 1}` as any}>
-              <div className={`faq-item ${active === i ? "active" : ""}`}>
+              <div className={`glass-card !p-0 transition-all duration-300 ${active === i ? "border-[#31B8D2] bg-[rgba(49,184,210,0.05)]" : "border-transparent"}`}>
                 <button className="w-full flex items-center justify-between p-5 text-left gap-4" onClick={() => setActive(active === i ? null : i)}>
                   <span className="font-semibold text-[15px]" style={{ fontFamily: "'Sora', sans-serif" }}>{f.q}</span>
                   {active === i ? <ChevronUp className="w-5 h-5 flex-shrink-0" style={{ color: "#31B8D2" }} /> : <ChevronDown className="w-5 h-5 flex-shrink-0" style={{ color: "#9CA3AF" }} />}
@@ -289,7 +289,7 @@ function FinalCTA() {
         <div className="w-full px-6 py-20 md:px-16 md:py-28 text-center" style={{ background: "linear-gradient(135deg, #31B8D2 0%, #5ECFE0 50%, #31B8D2 100%)" }}>
           <h2 style={{ fontFamily: "'Sora', sans-serif" }} className="text-3xl md:text-4xl font-extrabold text-white mb-4">Dê o primeiro passo para<br />viver sem dor</h2>
           <p className="text-white/80 max-w-lg mx-auto mb-8">Sua dor tem solução, e ela começa com uma avaliação. Agende agora e descubra um caminho personalizado para a sua recuperação.</p>
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 px-10 py-4 rounded-full bg-white font-semibold text-[15px] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl" style={{ color: "#31B8D2", fontFamily: "'Sora', sans-serif" }}><Phone className="w-5 h-5" />Agendar minha avaliação</a>
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2.5 px-10 py-4 rounded-full bg-white font-semibold text-[15px] transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_4px_25px_rgba(255,255,255,0.4)]" style={{ color: "#31B8D2", fontFamily: "'Sora', sans-serif" }}><Phone className="w-5 h-5" />Agendar minha avaliação</a>
           <p className="text-white/60 text-sm mt-6">Atendimento domiciliar e Pilates na Academia Villa Fitness</p>
         </div>
       </Reveal>
@@ -321,7 +321,11 @@ function WhatsAppFloat() {
 
 export default function PremiumLanding() {
   return (
-    <div className="min-h-screen" style={{ background: 'linear-gradient(135deg, rgba(49,184,210,0.08) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 50%, rgba(49,184,210,0.06) 80%, rgba(49,184,210,0.1) 100%)' }}>
+    <div className="min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(49,184,210,0.08) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 50%, rgba(49,184,210,0.06) 80%, rgba(49,184,210,0.1) 100%)' }}>
+      <div className="flare-bg flare-1"></div>
+      <div className="flare-bg flare-2"></div>
+      <div className="flare-bg flare-1" style={{ top: '40%', left: 'auto', right: '-10%', animationDelay: '-2s' }}></div>
+      <div className="flare-bg flare-2" style={{ bottom: '10%', left: '-20%', animationDelay: '-7s' }}></div>
       <Navbar />
       <Hero />
       <Stats />
