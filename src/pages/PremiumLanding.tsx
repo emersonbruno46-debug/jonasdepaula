@@ -121,15 +121,8 @@ function Hero() {
         </Reveal>
       </div>
 
-      {/* Thin Blue Bar & Marquee overlapping the photo bottom */}
-      <div className="relative z-20 -mt-8 md:-mt-12">
-        <div className="w-full h-1" style={{ background: "linear-gradient(90deg, #31B8D2, #5ECFE0)" }}></div>
-        <div className="overflow-hidden py-3 bg-white border-b border-gray-100 shadow-sm">
-          <div className="marquee-track" style={{ animationDuration: "40s" }}>
-            {[...Array(4)].map((_, i) => <span key={i} className="text-[#31B8D2] text-[13px] md:text-sm font-bold tracking-[0.2em] whitespace-nowrap" style={{ fontFamily: "'Sora', sans-serif" }}>{"• AGENDE SUA AVALIAÇÃO  ".repeat(10)}</span>)}
-          </div>
-        </div>
-      </div>
+      {/* Thin Blue Bar overlapping the photo bottom */}
+      <div className="relative z-20 -mt-8 md:-mt-12 w-full h-1" style={{ background: "linear-gradient(90deg, #31B8D2, #5ECFE0)" }}></div>
     </section>
   );
 }
@@ -143,23 +136,32 @@ function HeroBenefits() {
   ];
 
   return (
-    <section className="relative z-20 px-6 pb-12 mt-8 md:mt-0">
-      <div className="max-w-7xl mx-auto glass-card !p-8 rounded-[24px] shadow-xl border border-white/60 bg-white/80 backdrop-blur-xl">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-200/60">
-          {heroBenefits.map((b, i) => (
-            <div key={b.t} className={`flex items-start gap-4 ${i !== 0 && i !== 2 ? 'sm:pl-8' : ''} ${i !== 0 && i !== 1 ? 'lg:pl-8' : ''} ${i !== 0 ? 'pt-6 sm:pt-0' : ''}`}>
-              <div className="w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center border border-[#31B8D2]/30 text-[#31B8D2] bg-[#E8F7FA]/50">
-                <b.icon className="w-5 h-5" />
+    <>
+      <section className="relative z-20 px-6 pb-12 mt-8 md:mt-0">
+        <div className="max-w-7xl mx-auto glass-card !p-8 rounded-[24px] shadow-xl border border-white/60 bg-white/80 backdrop-blur-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-200/60">
+            {heroBenefits.map((b, i) => (
+              <div key={b.t} className={`flex items-start gap-4 ${i !== 0 && i !== 2 ? 'sm:pl-8' : ''} ${i !== 0 && i !== 1 ? 'lg:pl-8' : ''} ${i !== 0 ? 'pt-6 sm:pt-0' : ''}`}>
+                <div className="w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center border border-[#31B8D2]/30 text-[#31B8D2] bg-[#E8F7FA]/50">
+                  <b.icon className="w-5 h-5" />
+                </div>
+                <div>
+                  <h4 className="text-[13px] font-bold text-gray-800 mb-1 leading-tight" style={{ fontFamily: "'Sora', sans-serif" }}>{b.t}</h4>
+                  <p className="text-[12px] text-gray-500 leading-relaxed">{b.d}</p>
+                </div>
               </div>
-              <div>
-                <h4 className="text-[13px] font-bold text-gray-800 mb-1 leading-tight" style={{ fontFamily: "'Sora', sans-serif" }}>{b.t}</h4>
-                <p className="text-[12px] text-gray-500 leading-relaxed">{b.d}</p>
-              </div>
-            </div>
-          ))}
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Marquee below benefits strip */}
+      <div className="relative z-10 overflow-hidden py-4" style={{ background: "linear-gradient(90deg, #31B8D2, #5ECFE0)" }}>
+        <div className="marquee-track" style={{ animationDuration: "40s" }}>
+          {[...Array(4)].map((_, i) => <span key={i} className="text-white text-sm md:text-base font-semibold tracking-[0.2em] whitespace-nowrap" style={{ fontFamily: "'Sora', sans-serif" }}>{"• AGENDE SUA AVALIAÇÃO  ".repeat(10)}</span>)}
         </div>
       </div>
-    </section>
+    </>
   );
 }
 
