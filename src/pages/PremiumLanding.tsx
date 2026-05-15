@@ -1,5 +1,5 @@
 import { useState, useEffect, useRef, ReactNode } from "react";
-import { Phone, ChevronDown, ChevronUp, Menu, X, HeartPulse, Shield, Move, AlignCenter, Dumbbell, Sparkles, ClipboardCheck, Target, UserCheck, RefreshCw, Home, Activity, Star, Users, Award, Clock } from "lucide-react";
+import { Phone, ChevronDown, ChevronUp, Menu, X, HeartPulse, Shield, Move, AlignCenter, Dumbbell, Sparkles, ClipboardCheck, Target, UserCheck, RefreshCw, Home, Activity, Star, Users, Award, Clock, MessageCircle, ChevronRight, User, ShieldCheck } from "lucide-react";
 
 const WA = "https://wa.me/5500000000000";
 
@@ -25,7 +25,7 @@ function Navbar() {
         <a href="#top"><img src="/logo-jonas.svg" alt="Jonas de Paula" className="h-20 md:h-24 w-auto" /></a>
         <div className="hidden md:flex items-center gap-8">
           {links.map(l => <a key={l.h} href={l.h} className="text-[13px] font-medium tracking-wide uppercase" style={{ color: "#6B7280", transition: "color 0.3s" }} onMouseEnter={e => (e.currentTarget.style.color = "#31B8D2")} onMouseLeave={e => (e.currentTarget.style.color = "#6B7280")}>{l.l}</a>)}
-          <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand btn-glow !py-3 !px-7 !text-[13px]"><Phone className="w-4 h-4" />Agendar</a>
+          <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand btn-glow !py-3 !px-7 !text-[13px] rounded-full flex items-center gap-2"><MessageCircle className="w-4 h-4" />Agendar avaliação</a>
         </div>
         <button className="md:hidden p-2" onClick={() => setOpen(!open)}>{open ? <X size={24} /> : <Menu size={24} />}</button>
       </div>
@@ -35,61 +35,117 @@ function Navbar() {
 }
 
 function Hero() {
-  const t = "• AGENDE SUA AVALIAÇÃO  ";
   return (
-    <section id="top" className="relative pt-28 pb-0 md:pt-36 md:pb-0 overflow-hidden">
-      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10 lg:gap-4">
+    <section id="top" className="relative pt-28 pb-10 md:pt-36 md:pb-16 overflow-hidden">
+      <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10 lg:gap-4 relative z-10">
+        
+        {/* Left Column */}
         <div className="flex-1 text-center lg:text-left max-w-2xl">
           <Reveal delay="delay-1"><span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest uppercase mb-6" style={{ background: "#E8F7FA", color: "#31B8D2" }}>Fisioterapia personalizada</span></Reveal>
-          <Reveal delay="delay-2"><h1 style={{ fontFamily: "'Sora', sans-serif", lineHeight: 1.1 }} className="text-4xl md:text-5xl lg:text-[3.6rem] font-extrabold mb-6"><span className="text-gradient">Viva sem dor.</span><br />Recupere sua liberdade<br />de movimento.</h1></Reveal>
+          
+          <Reveal delay="delay-2">
+            <h1 style={{ fontFamily: "'Sora', sans-serif", lineHeight: 1.1 }} className="text-4xl md:text-5xl lg:text-[3.6rem] font-extrabold mb-5 text-gray-900">
+              <span className="text-[#31B8D2]">Viva sem dor.</span><br />
+              Recupere sua<br />
+              liberdade de<br />
+              movimento.
+            </h1>
+            <div className="w-12 h-1 bg-[#31B8D2] rounded-full mx-auto lg:mx-0 mb-6"></div>
+          </Reveal>
+          
           <Reveal delay="delay-3"><p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: "#6B7280" }}>Tratamento fisioterapêutico individualizado, baseado em ciência e cuidado humano. Resultados reais para quem quer voltar a se mover com confiança.</p></Reveal>
-          <Reveal delay="delay-4"><div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand"><Phone className="w-5 h-5" />Agende sua avaliação</a>
-            <a href="#tratamento" className="btn-outline">Conhecer o método</a>
-          </div></Reveal>
-          <Reveal delay="delay-5"><p className="mt-6 text-xs font-medium" style={{ color: "#9CA3AF" }}>CREFITO-4/439517-F</p></Reveal>
+          
+          <Reveal delay="delay-4">
+            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start mb-10">
+              <a href={WA} target="_blank" rel="noopener noreferrer" className="btn-brand btn-glow rounded-full px-8 py-3.5 flex items-center justify-center gap-2 text-sm">
+                <MessageCircle className="w-5 h-5" />
+                Agendar avaliação
+              </a>
+              <a href="#tratamento" className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-white text-[#31B8D2] font-semibold text-sm border border-[#31B8D2] transition-all hover:bg-[#F4FBFC] hover:shadow-lg">
+                Conhecer o método
+                <ChevronRight className="w-4 h-4" />
+              </a>
+            </div>
+          </Reveal>
+
+          {/* Trust Badges */}
+          <Reveal delay="delay-5">
+            <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-4 text-left mt-4">
+              <div className="flex items-center gap-2">
+                <User className="w-5 h-5 text-[#31B8D2]" />
+                <span className="text-xs font-semibold text-gray-600 leading-tight">Atendimento<br />individualizado</span>
+              </div>
+              <div className="hidden sm:block w-px h-8 bg-gray-200"></div>
+              <div className="flex items-center gap-2">
+                <ClipboardCheck className="w-5 h-5 text-[#31B8D2]" />
+                <span className="text-xs font-semibold text-gray-600 leading-tight">Avaliação<br />completa</span>
+              </div>
+              <div className="hidden sm:block w-px h-8 bg-gray-200"></div>
+              <div className="flex items-center gap-2">
+                <Target className="w-5 h-5 text-[#31B8D2]" />
+                <span className="text-xs font-semibold text-gray-600 leading-tight">Plano<br />personalizado</span>
+              </div>
+              <div className="hidden sm:block w-px h-8 bg-gray-200"></div>
+              <div className="flex items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-[#31B8D2]" />
+                <span className="text-xs font-semibold text-gray-600 leading-tight">CREFITO-4/439517-F<br /><span className="text-gray-400 font-normal">Fisioterapeuta registrado</span></span>
+              </div>
+            </div>
+          </Reveal>
         </div>
-        <Reveal cls="anim-fade-right" delay="delay-3" >
-          <div className="flex-1 relative flex justify-center lg:justify-end">
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-[32px] opacity-[0.07]" style={{ background: "radial-gradient(circle, #31B8D2 0%, transparent 70%)" }} />
-              <img src="/jonas-portrait.png" alt="Dr. Jonas de Paula — Fisioterapeuta" className="relative w-[320px] md:w-[400px] lg:w-[440px] object-contain drop-shadow-2xl" style={{ filter: "drop-shadow(0 20px 40px rgba(49,184,210,0.12))" }} />
+
+        {/* Right Column / Portrait */}
+        <Reveal cls="anim-fade-right" delay="delay-3">
+          <div className="flex-1 relative flex justify-center lg:justify-end mt-10 lg:mt-0">
+            <div className="relative z-10 flex items-center justify-center">
+              {/* Wavy Background Graphic (CSS approximation) */}
+              <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30 transform scale-[1.3] md:scale-[1.1]">
+                <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full border border-[#31B8D2]"></div>
+                <div className="absolute w-[400px] h-[400px] md:w-[500px] md:h-[500px] rounded-[40%] border border-[#31B8D2] animate-[spin_30s_linear_infinite]"></div>
+                <div className="absolute w-[500px] h-[500px] md:w-[600px] md:h-[600px] rounded-[45%] border border-transparent border-t-[#31B8D2] border-r-[#31B8D2] animate-[spin_35s_linear_infinite_reverse] opacity-50"></div>
+              </div>
+              
+              <img src="/jonas-portrait.png" alt="Dr. Jonas de Paula" className="relative z-10 w-[280px] md:w-[400px] lg:w-[460px] object-contain drop-shadow-2xl" />
+              
+              {/* Floating Badge */}
+              <div className="absolute top-[20%] -right-4 md:-right-6 z-20 glass-card !px-4 !py-4 md:!px-5 rounded-[24px] flex flex-col items-center gap-2 shadow-2xl animate-[float-flare_6s_ease-in-out_infinite_alternate]">
+                <div className="w-10 h-10 rounded-full bg-[#E8F7FA] flex items-center justify-center text-[#31B8D2]">
+                  <Activity className="w-5 h-5" />
+                </div>
+                <p className="text-[10px] font-bold text-center text-gray-700 leading-tight">
+                  Cuidado que<br />restaura o que<br /><span className="text-[#31B8D2]">te move.</span>
+                </p>
+              </div>
             </div>
           </div>
         </Reveal>
-      </div>
-      {/* Marquee overlapping the photo bottom */}
-      <div className="relative -mt-8 md:-mt-12 z-10 overflow-hidden py-4" style={{ background: "linear-gradient(90deg, #31B8D2, #5ECFE0)" }}>
-        <div className="marquee-track" style={{ animationDuration: "40s" }}>
-          {[...Array(4)].map((_, i) => <span key={i} className="text-white text-sm md:text-base font-semibold tracking-[0.2em] whitespace-nowrap" style={{ fontFamily: "'Sora', sans-serif" }}>{t.repeat(10)}</span>)}
-        </div>
       </div>
     </section>
   );
 }
 
-const statsData = [
-  { icon: Users, value: "500+", label: "Pacientes atendidos" },
-  { icon: Award, value: "5+", label: "Anos de experiência" },
-  { icon: Star, value: "4.9", label: "Avaliação Google" },
-  { icon: Clock, value: "50min", label: "Sessão individualizada" },
-];
+function HeroBenefits() {
+  const heroBenefits = [
+    { icon: Activity, t: "Alívio da dor", d: "Reduza dores e retome suas atividades diárias." },
+    { icon: Move, t: "Mais mobilidade", d: "Recupere movimentos com segurança e leveza." },
+    { icon: ClipboardCheck, t: "Tratamento personalizado", d: "Plano exclusivo para suas necessidades e objetivos." },
+    { icon: HeartPulse, t: "Acompanhamento profissional", d: "Suporte contínuo para resultados duradouros e consistentes." },
+  ];
 
-function Stats() {
   return (
-    <section className="py-12 md:py-14">
-      <div className="max-w-5xl mx-auto px-6">
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
-          {statsData.map((s, i) => (
-            <Reveal key={s.label} delay={`delay-${i + 1}` as any}>
-              <div className="text-center">
-                <div className="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-3" style={{ background: "linear-gradient(135deg, rgba(49,184,210,0.12), rgba(49,184,210,0.04))" }}>
-                  <s.icon className="w-5 h-5" style={{ color: "#31B8D2" }} />
-                </div>
-                <p className="text-2xl md:text-3xl font-extrabold" style={{ fontFamily: "'Sora', sans-serif", color: "#31B8D2" }}>{s.value}</p>
-                <p className="text-xs md:text-sm mt-1 font-medium" style={{ color: "#9CA3AF" }}>{s.label}</p>
+    <section className="relative z-20 px-6 pb-12 mt-8 md:mt-0">
+      <div className="max-w-7xl mx-auto glass-card !p-8 rounded-[24px] shadow-xl border border-white/60 bg-white/80 backdrop-blur-xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-200/60">
+          {heroBenefits.map((b, i) => (
+            <div key={b.t} className={`flex items-start gap-4 ${i !== 0 && i !== 2 ? 'sm:pl-8' : ''} ${i !== 0 && i !== 1 ? 'lg:pl-8' : ''} ${i !== 0 ? 'pt-6 sm:pt-0' : ''}`}>
+              <div className="w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center border border-[#31B8D2]/30 text-[#31B8D2] bg-[#E8F7FA]/50">
+                <b.icon className="w-5 h-5" />
               </div>
-            </Reveal>
+              <div>
+                <h4 className="text-[13px] font-bold text-gray-800 mb-1 leading-tight" style={{ fontFamily: "'Sora', sans-serif" }}>{b.t}</h4>
+                <p className="text-[12px] text-gray-500 leading-relaxed">{b.d}</p>
+              </div>
+            </div>
           ))}
         </div>
       </div>
@@ -325,7 +381,7 @@ export default function PremiumLanding() {
       <div className="relative z-10">
       <Navbar />
       <Hero />
-      <Stats />
+      <HeroBenefits />
       <Benefits />
       <Treatment />
       <About />
