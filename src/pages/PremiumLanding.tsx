@@ -37,7 +37,7 @@ function Navbar() {
 function Hero() {
   const t = "• AGENDE SUA AVALIAÇÃO  ";
   return (
-    <section id="top" className="relative pt-28 pb-0 md:pt-36 md:pb-0 overflow-hidden" style={{ background: "linear-gradient(180deg, #F4FBFC 0%, #FFFFFF 100%)" }}>
+    <section id="top" className="relative pt-28 pb-0 md:pt-36 md:pb-0 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10 lg:gap-4">
         <div className="flex-1 text-center lg:text-left max-w-2xl">
           <Reveal delay="delay-1"><span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest uppercase mb-6" style={{ background: "#E8F7FA", color: "#31B8D2" }}>Fisioterapia personalizada</span></Reveal>
@@ -77,7 +77,7 @@ const statsData = [
 
 function Stats() {
   return (
-    <section className="py-12 md:py-14" style={{ background: "#FAFBFC" }}>
+    <section className="py-12 md:py-14">
       <div className="max-w-5xl mx-auto px-6">
         <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
           {statsData.map((s, i) => (
@@ -140,7 +140,7 @@ const steps = [
 
 function Treatment() {
   return (
-    <section id="tratamento" className="py-16 md:py-20" style={{ background: "#FAFBFC" }}>
+    <section id="tratamento" className="py-16 md:py-20">
       <div className="max-w-7xl mx-auto px-6">
         <Reveal><p className="text-[11px] font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#31B8D2" }}>COMO FUNCIONA</p></Reveal>
         <Reveal delay="delay-1"><h2 style={{ fontFamily: "'Sora', sans-serif" }} className="text-3xl md:text-4xl font-extrabold mb-4">Um método claro, do diagnóstico<br className="hidden md:block" /> à sua recuperação completa</h2></Reveal>
@@ -191,7 +191,7 @@ function About() {
 
 function Quote() {
   return (
-    <section className="py-14 md:py-16" style={{ background: "#FAFBFC" }}>
+    <section className="py-14 md:py-16">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <Reveal>
           <div className="relative">
@@ -258,7 +258,7 @@ const faqs = [
 function FAQ() {
   const [active, setActive] = useState<number | null>(0);
   return (
-    <section id="faq" className="py-16 md:py-20" style={{ background: "#FAFBFC" }}>
+    <section id="faq" className="py-16 md:py-20">
       <div className="max-w-3xl mx-auto px-6">
         <Reveal><p className="text-center text-[11px] font-bold tracking-[0.2em] uppercase mb-3" style={{ color: "#31B8D2" }}>FAQ</p></Reveal>
         <Reveal delay="delay-1"><h2 style={{ fontFamily: "'Sora', sans-serif" }} className="text-3xl md:text-4xl font-extrabold text-center mb-12">Perguntas frequentes</h2></Reveal>
