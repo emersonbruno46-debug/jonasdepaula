@@ -118,11 +118,21 @@ body {
 .page-bg {
   background-color: #FAFBFC;
   background-image: 
-    radial-gradient(circle at 0% 5%, rgba(125, 211, 232, 0.25) 0%, transparent 20%),
-    radial-gradient(circle at 100% 25%, rgba(49, 184, 210, 0.15) 0%, transparent 20%),
-    radial-gradient(circle at 0% 50%, rgba(125, 211, 232, 0.2) 0%, transparent 20%),
-    radial-gradient(circle at 100% 75%, rgba(49, 184, 210, 0.15) 0%, transparent 20%),
-    radial-gradient(circle at 50% 95%, rgba(125, 211, 232, 0.25) 0%, transparent 25%);
+    radial-gradient(circle at 0% 5%, rgba(125, 211, 232, 0.25) 0%, transparent 400px),
+    radial-gradient(circle at 100% 25%, rgba(49, 184, 210, 0.15) 0%, transparent 400px),
+    radial-gradient(circle at 0% 50%, rgba(125, 211, 232, 0.2) 0%, transparent 400px),
+    radial-gradient(circle at 100% 75%, rgba(49, 184, 210, 0.15) 0%, transparent 400px),
+    radial-gradient(circle at 50% 95%, rgba(125, 211, 232, 0.25) 0%, transparent 500px);
+}
+@media (min-width: 768px) {
+  .page-bg {
+    background-image: 
+      radial-gradient(circle at 0% 5%, rgba(125, 211, 232, 0.25) 0%, transparent 20%),
+      radial-gradient(circle at 100% 25%, rgba(49, 184, 210, 0.15) 0%, transparent 20%),
+      radial-gradient(circle at 0% 50%, rgba(125, 211, 232, 0.2) 0%, transparent 20%),
+      radial-gradient(circle at 100% 75%, rgba(49, 184, 210, 0.15) 0%, transparent 20%),
+      radial-gradient(circle at 50% 95%, rgba(125, 211, 232, 0.25) 0%, transparent 25%);
+  }
 }
 
 /* ─── Light Mode Modern Aesthetics ─── */

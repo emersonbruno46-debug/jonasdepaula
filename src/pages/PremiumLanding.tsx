@@ -70,25 +70,25 @@ function Hero() {
 
           {/* Trust Badges */}
           <Reveal delay="delay-5">
-            <div className="flex flex-wrap justify-center lg:justify-start gap-x-6 gap-y-4 text-left mt-4">
-              <div className="flex items-center gap-2">
-                <User className="w-5 h-5 text-[#31B8D2]" />
-                <span className="text-xs font-semibold text-gray-600 leading-tight">Atendimento<br />individualizado</span>
+            <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center lg:justify-start gap-x-4 sm:gap-x-6 gap-y-4 text-left mt-6">
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <User className="w-5 h-5 text-[#31B8D2] mx-auto sm:mx-0" />
+                <span className="text-[11px] sm:text-xs font-semibold text-gray-600 leading-tight text-center sm:text-left">Atendimento<br className="hidden sm:block" /> individualizado</span>
               </div>
               <div className="hidden sm:block w-px h-8 bg-gray-200"></div>
-              <div className="flex items-center gap-2">
-                <ClipboardCheck className="w-5 h-5 text-[#31B8D2]" />
-                <span className="text-xs font-semibold text-gray-600 leading-tight">Avaliação<br />completa</span>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <ClipboardCheck className="w-5 h-5 text-[#31B8D2] mx-auto sm:mx-0" />
+                <span className="text-[11px] sm:text-xs font-semibold text-gray-600 leading-tight text-center sm:text-left">Avaliação<br className="hidden sm:block" /> completa</span>
               </div>
               <div className="hidden sm:block w-px h-8 bg-gray-200"></div>
-              <div className="flex items-center gap-2">
-                <Target className="w-5 h-5 text-[#31B8D2]" />
-                <span className="text-xs font-semibold text-gray-600 leading-tight">Plano<br />personalizado</span>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <Target className="w-5 h-5 text-[#31B8D2] mx-auto sm:mx-0" />
+                <span className="text-[11px] sm:text-xs font-semibold text-gray-600 leading-tight text-center sm:text-left">Plano<br className="hidden sm:block" /> personalizado</span>
               </div>
               <div className="hidden sm:block w-px h-8 bg-gray-200"></div>
-              <div className="flex items-center gap-2">
-                <ShieldCheck className="w-5 h-5 text-[#31B8D2]" />
-                <span className="text-xs font-semibold text-gray-600 leading-tight">CREFITO-4/439517-F<br /><span className="text-gray-400 font-normal">Fisioterapeuta registrado</span></span>
+              <div className="flex flex-col sm:flex-row sm:items-center gap-2">
+                <ShieldCheck className="w-5 h-5 text-[#31B8D2] mx-auto sm:mx-0" />
+                <span className="text-[11px] sm:text-xs font-semibold text-gray-600 leading-tight text-center sm:text-left">CREFITO-4/439517-F<br /><span className="text-gray-400 font-normal">Registro profissional</span></span>
               </div>
             </div>
           </Reveal>
@@ -108,7 +108,7 @@ function Hero() {
               <img src="/jonas-portrait.png" alt="Dr. Jonas de Paula" className="relative z-10 w-[280px] md:w-[400px] lg:w-[460px] object-contain drop-shadow-2xl" />
               
               {/* Floating Badge */}
-              <div className="absolute top-[20%] -right-4 md:-right-6 z-20 glass-card !px-4 !py-4 md:!px-5 rounded-[24px] flex flex-col items-center gap-2 shadow-2xl animate-[float-flare_6s_ease-in-out_infinite_alternate]">
+              <div className="absolute top-[20%] right-0 md:-right-6 z-20 glass-card !px-4 !py-4 md:!px-5 rounded-[24px] flex flex-col items-center gap-2 shadow-2xl animate-[float-flare_6s_ease-in-out_infinite_alternate]">
                 <div className="w-10 h-10 rounded-full bg-[#E8F7FA] flex items-center justify-center text-[#31B8D2]">
                   <Activity className="w-5 h-5" />
                 </div>
@@ -137,9 +137,9 @@ function HeroBenefits() {
 
   return (
     <>
-      <section className="relative z-20 px-6 pb-12 -mt-6 md:-mt-10">
-        <div className="max-w-7xl mx-auto glass-card !p-8 rounded-[24px] shadow-xl border border-white/60 bg-white/80 backdrop-blur-xl">
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-200/60">
+      <section className="relative z-20 px-4 sm:px-6 pb-12 -mt-6 md:-mt-10">
+        <div className="max-w-7xl mx-auto glass-card !p-5 sm:!p-8 rounded-[24px] shadow-xl border border-white/60 bg-white/80 backdrop-blur-xl">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-200/60">
             {heroBenefits.map((b, i) => (
               <div key={b.t} className={`flex items-start gap-4 ${i !== 0 && i !== 2 ? 'sm:pl-8' : ''} ${i !== 0 && i !== 1 ? 'lg:pl-8' : ''} ${i !== 0 ? 'pt-6 sm:pt-0' : ''}`}>
                 <div className="w-10 h-10 flex-shrink-0 rounded-full flex items-center justify-center border border-[#31B8D2]/30 text-[#31B8D2] bg-[#E8F7FA]/50">
