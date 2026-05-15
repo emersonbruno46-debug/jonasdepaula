@@ -36,11 +36,11 @@ function Navbar() {
 
 function Hero() {
   return (
-    <section id="top" className="relative pt-28 pb-10 md:pt-36 md:pb-16 overflow-hidden">
+    <section id="top" className="relative pt-28 md:pt-36 overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 flex flex-col lg:flex-row items-center gap-10 lg:gap-4 relative z-10">
         
         {/* Left Column */}
-        <div className="flex-1 text-center lg:text-left max-w-2xl">
+        <div className="flex-1 text-center lg:text-left max-w-2xl pb-10 md:pb-16">
           <Reveal delay="delay-1"><span className="inline-block px-4 py-1.5 rounded-full text-[11px] font-semibold tracking-widest uppercase mb-6" style={{ background: "#E8F7FA", color: "#31B8D2" }}>Fisioterapia personalizada</span></Reveal>
           
           <Reveal delay="delay-2">
@@ -96,8 +96,8 @@ function Hero() {
 
         {/* Right Column / Portrait */}
         <Reveal cls="anim-fade-right" delay="delay-3">
-          <div className="flex-1 relative flex justify-center lg:justify-end mt-10 lg:mt-0">
-            <div className="relative z-10 flex items-center justify-center">
+          <div className="flex-1 relative flex justify-center lg:justify-end mt-10 lg:mt-0 h-full">
+            <div className="relative z-10 flex items-end justify-center">
               {/* Wavy Background Graphic (CSS approximation) */}
               <div className="absolute inset-0 z-0 flex items-center justify-center opacity-30 transform scale-[1.3] md:scale-[1.1]">
                 <div className="w-[300px] h-[300px] md:w-[400px] md:h-[400px] rounded-full border border-[#31B8D2]"></div>
@@ -122,7 +122,7 @@ function Hero() {
       </div>
 
       {/* Thin Blue Bar overlapping the photo bottom */}
-      <div className="relative z-20 -mt-8 md:-mt-12 w-full h-1" style={{ background: "linear-gradient(90deg, #31B8D2, #5ECFE0)" }}></div>
+      <div className="absolute bottom-0 left-0 w-full h-1 z-20" style={{ background: "linear-gradient(90deg, #31B8D2, #5ECFE0)" }}></div>
     </section>
   );
 }
@@ -137,7 +137,7 @@ function HeroBenefits() {
 
   return (
     <>
-      <section className="relative z-20 px-6 pb-12 mt-8 md:mt-0">
+      <section className="relative z-20 px-6 pb-12 -mt-6 md:-mt-10">
         <div className="max-w-7xl mx-auto glass-card !p-8 rounded-[24px] shadow-xl border border-white/60 bg-white/80 backdrop-blur-xl">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 divide-y sm:divide-y-0 sm:divide-x divide-gray-200/60">
             {heroBenefits.map((b, i) => (
