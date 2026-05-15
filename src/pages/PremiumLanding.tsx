@@ -321,7 +321,7 @@ function WhatsAppFloat() {
 
 export default function PremiumLanding() {
   return (
-    <div className="min-h-screen relative overflow-hidden bg-[#FAFBFC] page-bg">
+    <div className="min-h-screen relative overflow-hidden page-bg">
       <div className="relative z-10">
       <Navbar />
       <Hero />

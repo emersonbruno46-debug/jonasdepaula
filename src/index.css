@@ -115,18 +115,14 @@ body {
 }
 
 /* ─── Background ─── */
-.page-bg::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  background-image: url('/back.png');
-  background-size: 100% auto;
-  background-repeat: repeat-y;
-  opacity: 0.6;
-  z-index: 0;
-  pointer-events: none;
+.page-bg {
+  background-color: #FAFBFC;
+  background-image: 
+    radial-gradient(circle at 0% 5%, rgba(125, 211, 232, 0.25) 0%, transparent 20%),
+    radial-gradient(circle at 100% 25%, rgba(49, 184, 210, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 0% 50%, rgba(125, 211, 232, 0.2) 0%, transparent 20%),
+    radial-gradient(circle at 100% 75%, rgba(49, 184, 210, 0.15) 0%, transparent 20%),
+    radial-gradient(circle at 50% 95%, rgba(125, 211, 232, 0.25) 0%, transparent 25%);
 }
 
 /* ─── Light Mode Modern Aesthetics ─── */
