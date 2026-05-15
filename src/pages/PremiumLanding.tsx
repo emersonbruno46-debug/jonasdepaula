@@ -321,11 +321,19 @@ function WhatsAppFloat() {
 
 export default function PremiumLanding() {
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ backgroundImage: "url('/back.png')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
-      <div className="flare-bg flare-1"></div>
-      <div className="flare-bg flare-2"></div>
-      <div className="flare-bg flare-1" style={{ top: '40%', left: 'auto', right: '-10%', animationDelay: '-2s' }}></div>
-      <div className="flare-bg flare-2" style={{ bottom: '10%', left: '-20%', animationDelay: '-7s' }}></div>
+    <div className="min-h-screen relative overflow-hidden bg-[#FAFBFC]">
+      {/* Fixed Background Image with reduced opacity */}
+      <div 
+        className="fixed inset-0 w-full h-full z-0 pointer-events-none" 
+        style={{ 
+          backgroundImage: "url('/back.png')", 
+          backgroundSize: "cover", 
+          backgroundPosition: "center",
+          opacity: 0.6 
+        }} 
+      />
+      {/* Content wrapper to ensure it stays above background */}
+      <div className="relative z-10">
       <Navbar />
       <Hero />
       <Stats />
@@ -338,6 +346,7 @@ export default function PremiumLanding() {
       <FinalCTA />
       <Footer />
       <WhatsAppFloat />
+      </div>
     </div>
   );
 }
