@@ -116,9 +116,9 @@ body {
 
 /* ─── Light Mode Modern Aesthetics ─── */
 .glass-card {
-  background: rgba(255, 255, 255, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
   border: 1px solid rgba(49, 184, 210, 0.2);
   border-radius: var(--radius-card);
   padding: 36px 28px;

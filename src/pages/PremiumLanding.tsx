@@ -321,7 +321,7 @@ function WhatsAppFloat() {
 
 export default function PremiumLanding() {
   return (
-    <div className="min-h-screen relative overflow-hidden" style={{ background: 'linear-gradient(135deg, rgba(49,184,210,0.08) 0%, rgba(255,255,255,1) 30%, rgba(255,255,255,1) 50%, rgba(49,184,210,0.06) 80%, rgba(49,184,210,0.1) 100%)' }}>
+    <div className="min-h-screen relative overflow-hidden" style={{ backgroundImage: "url('/back.png')", backgroundSize: "cover", backgroundAttachment: "fixed", backgroundPosition: "center" }}>
       <div className="flare-bg flare-1"></div>
       <div className="flare-bg flare-2"></div>
       <div className="flare-bg flare-1" style={{ top: '40%', left: 'auto', right: '-10%', animationDelay: '-2s' }}></div>
