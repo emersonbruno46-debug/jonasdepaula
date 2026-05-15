@@ -105,7 +105,7 @@ function Hero() {
                 <div className="absolute w-[500px] h-[500px] md:w-[600px] md:h-[600px] rounded-[45%] border border-transparent border-t-[#31B8D2] border-r-[#31B8D2] animate-[spin_35s_linear_infinite_reverse] opacity-50"></div>
               </div>
               
-              <img src="/jonas-portrait.png" alt="Dr. Jonas de Paula" className="relative z-10 w-[280px] md:w-[400px] lg:w-[460px] object-contain drop-shadow-2xl" />
+              <img src="/jonas-portrait-certo.png" alt="Dr. Jonas de Paula" className="relative z-10 w-[280px] md:w-[400px] lg:w-[460px] object-contain drop-shadow-2xl" />
               
               {/* Floating Badge */}
               <div className="absolute top-[20%] right-0 md:-right-6 z-20 glass-card !px-4 !py-4 md:!px-5 rounded-[24px] flex flex-col items-center gap-2 shadow-2xl animate-[float-flare_6s_ease-in-out_infinite_alternate]">
