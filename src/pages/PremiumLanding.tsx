@@ -120,6 +120,16 @@ function Hero() {
           </div>
         </Reveal>
       </div>
+
+      {/* Thin Blue Bar & Marquee overlapping the photo bottom */}
+      <div className="relative z-20 -mt-8 md:-mt-12">
+        <div className="w-full h-1" style={{ background: "linear-gradient(90deg, #31B8D2, #5ECFE0)" }}></div>
+        <div className="overflow-hidden py-3 bg-white border-b border-gray-100 shadow-sm">
+          <div className="marquee-track" style={{ animationDuration: "40s" }}>
+            {[...Array(4)].map((_, i) => <span key={i} className="text-[#31B8D2] text-[13px] md:text-sm font-bold tracking-[0.2em] whitespace-nowrap" style={{ fontFamily: "'Sora', sans-serif" }}>{"• AGENDE SUA AVALIAÇÃO  ".repeat(10)}</span>)}
+          </div>
+        </div>
+      </div>
     </section>
   );
 }
